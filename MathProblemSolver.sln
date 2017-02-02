@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathProblemSolver", "MathProblemSolver\MathProblemSolver.csproj", "{ABCBC536-E511-4117-99EE-975EF266791E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathProblemSolverTest", "MathProblemSolverTest\MathProblemSolverTest.csproj", "{1D4EC49F-DCE1-49C0-AA74-918F3350522D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ABCBC536-E511-4117-99EE-975EF266791E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABCBC536-E511-4117-99EE-975EF266791E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABCBC536-E511-4117-99EE-975EF266791E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4EC49F-DCE1-49C0-AA74-918F3350522D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4EC49F-DCE1-49C0-AA74-918F3350522D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4EC49F-DCE1-49C0-AA74-918F3350522D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4EC49F-DCE1-49C0-AA74-918F3350522D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,6 +10,7 @@ namespace MathProblemSolver
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
