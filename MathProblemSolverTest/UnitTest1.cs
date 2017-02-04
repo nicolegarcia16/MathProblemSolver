@@ -11,11 +11,10 @@ namespace MathProblemSolverTest
         [TestMethod]
         public void TestReadFile()
         {
-            string path = "C:/Users/nicol/Documents/Graduate Classes/SSE 554/test.txt";
+            string path = "C:/Users/nicol/Documents/Graduate Classes/SSE 554/testRead.txt";
             MathProblemSolver.FileEditor myEditor = new FileEditor(path);
-            string[] lines = myEditor.readEntireFile();
+            List<string> lines = myEditor.readEntireFile();
             Assert.AreEqual(lines[0], "This is a test.");
-            myEditor.dispose();
         }
 
         [TestMethod]
@@ -23,11 +22,10 @@ namespace MathProblemSolverTest
         {
             string path = "C:/Users/nicol/Documents/Graduate Classes/SSE 554/test.txt";
             FileEditor myEditor = new FileEditor(path);
-            string testSentence = "Test sentence";
+            string testSentence = "Test sentence.";
             myEditor.writeLineToFile(testSentence);
-            string[] lines = myEditor.readEntireFile();
-            Assert.AreEqual(lines[lines.GetLength(0)-1], "Test sentence.");
-            myEditor.dispose();
+            List<string> lines = myEditor.readEntireFile();
+            Assert.AreEqual(lines[lines.Count - 1], "Test sentence.");
         }
 
         [TestMethod]
@@ -38,20 +36,11 @@ namespace MathProblemSolverTest
             List<string> testSentences = new List<string>();
             testSentences.Add("Bow ties are cool.");
             testSentences.Add("Yer a wizard, Harry!");
+            testSentences.Add("That's no moon...");
             testSentences.Add("It is a truth universally acknowledged");
             myEditor.writeMultipleLinesToFile(testSentences.ToArray());
-            string[] lines = myEditor.readEntireFile();
-            myEditor.dispose();
-            Assert.AreEqual(lines[lines.GetLength(0)-1], "It is a truth universally acknowledged.");
-            
+            List<string> lines = myEditor.readEntireFile();
+            Assert.AreEqual(lines.[lines.Count - 1], "It is a truth universally acknowledged");
         }
-
-        [TestMethod]
-        public void TestReadLineFromFile()
-        {
-
-        }
-
-
     }
 }

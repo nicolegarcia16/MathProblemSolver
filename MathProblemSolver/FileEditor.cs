@@ -13,44 +13,47 @@ namespace MathProblemSolver
         FileStream stream;
         StreamReader reader;
         StreamWriter writer;
+        string FilePath;
 
         public FileEditor(string filePath)
         {
-            stream = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            reader = new StreamReader(stream);
-            writer = new StreamWriter(stream);
+            FilePath = filePath;
         }
 
-        public void dispose()
+        public List<string> readEntireFile()
         {
-            writer.Close();
-            writer.Dispose();
-        }
-
-        public string[] readEntireFile()
-        {
-           
             List<string> lines = new List<string>();
-            while (!reader.EndOfStream)
+            using (StreamReader reader = new StreamReader(FilePath))
             {
-                lines.Add(reader.ReadLine());
+                while (!reader.EndOfStream)
+                {
+                    lines.Add(reader.ReadLine());
+                }
             }
-            return lines.ToArray();
+            return lines;
         }
 
         public void writeLineToFile(string lineToWrite)
         {
-            writer.WriteLine(lineToWrite);
-            writer.Flush();
+            using (StreamWriter writer = new StreamWriter(FilePath))
+            {
+                writer.WriteLine(lineToWrite);
+            }
         }
 
         public void writeMultipleLinesToFile(string[] linesToWrite)
         {
-            foreach(string line in linesToWrite)
+            using (StreamWriter writer = new StreamWriter(FilePath))
             {
-                writer.WriteLine(line);
+                foreach (string line in linesToWrite)
+                {
+                    writer.WriteLine(line);
+                }
             }
         }
+
+
+
 
     }
 }
